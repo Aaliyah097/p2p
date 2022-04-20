@@ -39,6 +39,7 @@ class WorkThread(QtCore.QThread):
 				request_status = request.status
 				if request_status == 'accepted':
 					is_allowed = True
+					print('Поток вернул {}:{}'.format(self.to_ip, self.to_port))
 					self.threadSignal.emit([self.to_port, self.to_ip])
 			except DoesNotExist:
 				is_allowed = True
@@ -266,14 +267,15 @@ class MainControl(QtWidgets.QMainWindow):
 				self.ui.statusBar.showMessage("Поле ID Партнера не заполнено или заполнено наверно.")
 
 	def listen(self, data):
+		print(data)
 		self.connection.is_active = True
 
 		self.handler.partner_ip = data[1]
 		self.handler.partner_port = data[0]
+		print('Соединение с {}:{} установлено'.format(data[1], data[0]))
 		self.ui.statusBar.showMessage('Соединение с {}:{} установлено'.format(data[1], data[0]))
 		self.handler = DataHandlerController(self.udp_socket)
 		self.handler.is_active = True
-		self.handler.partner_port = data[0]
 
 		print(self.handler.__dict__)
 

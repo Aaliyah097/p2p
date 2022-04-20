@@ -55,7 +55,7 @@ class DataHandler(QtCore.QThread):
             full_load = False
             while not full_load:
                 data, addr = self.socket.recvfrom(self.max_bytes)
-                #print(f'received {data}')
+                print('Получено от {}:{}'.format(addr[0], addr[1]))
                 if (b'begin>>' in data) and (b'<<end' in data):
                     data = data.replace(b'begin>>', b'')
                     data = data.replace(b'<<end', b'')

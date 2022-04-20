@@ -1,0 +1,10 @@
+<RCC>
+  <qresource>
+    <file>icons/remote_control.png</file>
+    <file>icons/meeting.png</file>
+    <file>icons/refresh.png</file>
+    <file>icons/exchange.png</file>
+    <file>icons/document.png</file>
+    <file>icons/globe.png</file>
+  </qresource>
+</RCC>

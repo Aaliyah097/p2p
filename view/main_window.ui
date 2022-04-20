@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>806</width>
+    <height>517</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(77, 0, 116);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>400</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(247, 247, 247);</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="remote_control_tab">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>400</height>
+        </size>
+       </property>
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/remote_control.png</normaloff>:/icons/remote_control.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Удаленное управление</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>737</width>
+          <height>209</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Подключиться ко мне</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="user_groupBox">
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>150</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QGroupBox{
+	border-radius: 5px;
+	background-color: rgb(232, 232, 232);
+}</string>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QLabel" name="myid_label">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>14</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: transparent;</string>
+                  </property>
+                  <property name="text">
+                   <string>Мой ID</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="myid_input">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: transparent;</string>
+                  </property>
+                  <property name="text">
+                   <string>ID</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="mypassword_label">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>14</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: transparent;</string>
+                  </property>
+                  <property name="text">
+                   <string>Пароль</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <item>
+                   <widget class="QLabel" name="mypassword_input">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: transparent;</string>
+                    </property>
+                    <property name="text">
+                     <string>password</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="change_password_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>10</width>
+                      <height>10</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string>Создать новый случайный пароль</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border-radius: 25px;
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	border-radius: 2px;
+}
+
+QPushButton:hover {
+	background-color: rgb(245, 245, 245);
+}
+
+QPushButton:pressed{
+	background-color: rgb(250, 250, 250);
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="resources.qrc">
+                      <normaloff>:/icons/refresh.png</normaloff>:/icons/refresh.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Управлять удаленным компьютером</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="user_groupBox_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>150</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QGroupBox{
+	border-radius: 5px;
+	background-color: transparent;
+}</string>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_5">
+                  <item>
+                   <widget class="QComboBox" name="control_type_comboBox">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>210</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="contextMenuPolicy">
+                     <enum>Qt::DefaultContextMenu</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QComboBox{
+	background-color: transparent;
+	border: none;
+}</string>
+                    </property>
+                    <property name="currentText">
+                     <string notr="true">Удаленное управление</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Удаленное управление</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/icons/exchange.png</normaloff>:/icons/exchange.png</iconset>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Передача файлов</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/icons/document.png</normaloff>:/icons/document.png</iconset>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="remote_id_input">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Введите ID Партнера</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="remote_password_input">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Введите пароль Партнера</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="remote_connect_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>130</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>150</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>12</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border-radius: 25px;
+	background-color: rgb(85, 0, 127);
+	font: 12pt &quot;Calibri&quot;;
+	color: rgb(255, 255, 255);
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+	background-color: rgb(133, 0, 200);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(163, 0, 245);
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Cоединиться</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>390</y>
+          <width>741</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="server_connect_button">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 25px;
+	background-color: rgb(85, 0, 127);
+	font: 12pt &quot;Calibri&quot;;
+	color: rgb(255, 255, 255);
+	border-radius: 2px;
+}
+
+QPushButton:hover {
+	background-color: rgb(133, 0, 200);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(163, 0, 245);
+}</string>
+           </property>
+           <property name="text">
+            <string>Сессия</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="metting_tab">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>500</height>
+        </size>
+       </property>
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/meeting.png</normaloff>:/icons/meeting.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Собрание</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="requests_tab">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/globe.png</normaloff>:/icons/globe.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Подключения</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>511</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Текущие подключения</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refresh_requests_button">
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>Обновить список активных подключений</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	border-radius: 25px;
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	border-radius: 2px;
+}
+
+QPushButton:hover {
+	background-color: rgb(240, 240, 240);
+}
+
+QPushButton:pressed{
+	background-color: rgb(250, 250, 250);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/icons/refresh.png</normaloff>:/icons/refresh.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="requests_table">
+           <property name="maximumSize">
+            <size>
+             <width>749</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Calibri</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustIgnored</enum>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="textElideMode">
+            <enum>Qt::ElideMiddle</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>160</number>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Пользователь</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Статус</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Действия</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

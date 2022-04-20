@@ -92,15 +92,24 @@ class MainControl(QtWidgets.QMainWindow):
 	# отправляет данные о хосте на сервер
 	def make_host_info(self):
 		status = ''
+
 		try:
 			self.udp_socket.sendto(f"request_host_info;{self.connection.id}".encode('utf-8'),
 								   (os.getenv('server_host'), int(os.getenv('server_port'))))
 			peer_data, addr = self.udp_socket.recvfrom(1024)
 			response = peer_data.decode('utf-8').split(';')
-			print(response)
 			status = response[0]
 			self.connection.host_ip = response[1]
 			self.connection.host_port = int(response[2])
+
+			if self.connection.is_local:
+				s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+				s.connect(('8.8.8.8', 80))
+				local_ip = s.getsockname()[0]
+				self.connection.host_ip = local_ip
+
+				query = Connection.update(host_ip=local_ip).where(Connection.id == self.connection.id)
+				query.execute()
 		except Exception as e:
 			print(str(e))
 

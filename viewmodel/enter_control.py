@@ -36,6 +36,10 @@ class MainControl(QtWidgets.QMainWindow):
 				conn = Connection.select().where(Connection.user_id == user.id).get()
 				conn.is_active = True
 				conn.active_peers = 0
+				if self.ui.network_checkbox.checkState() == 2:
+					conn.is_local = True
+				else:
+					conn.is_local = False
 				conn.save()
 			except peewee.DoesNotExist:
 				conn = Connection(user_id=user.id, is_active=True)

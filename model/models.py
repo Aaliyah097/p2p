@@ -39,6 +39,7 @@ class Connection(BaseModel):
     password = CharField(max_length=8, default=str(uuid.uuid4())[:8])
     active_peers = IntegerField(default=0)
     user_id = ForeignKeyField(Account, to_field='id')
+    is_local = BooleanField(default=False)
 
     class Meta:
         db_table = 'connections'

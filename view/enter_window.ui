@@ -172,12 +172,22 @@ border-radius: 0px;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>290</y>
+      <y>300</y>
       <width>301</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QCheckBox" name="network_checkbox">
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Calibri&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Локальная сеть</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">

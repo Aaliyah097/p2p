@@ -5,7 +5,7 @@ from models import *
 def create_table():
     try:
         dbhandle.connect()
-        Request.create_table()
+        Connection.create_table()
     except InternalError as px:
         print(str(px))
 

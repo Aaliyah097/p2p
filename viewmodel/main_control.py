@@ -270,12 +270,12 @@ class MainControl(QtWidgets.QMainWindow):
 		print(data)
 		self.connection.is_active = True
 
-		self.handler.partner_ip = data[1]
-		self.handler.partner_port = data[0]
 		print('Соединение с {}:{} установлено'.format(data[1], data[0]))
 		self.ui.statusBar.showMessage('Соединение с {}:{} установлено'.format(data[1], data[0]))
 		self.handler = DataHandlerController(self.udp_socket)
 		self.handler.is_active = True
+		self.handler.partner_ip = data[1]
+		self.handler.partner_port = data[0]
 
 		print(self.handler.__dict__)
 

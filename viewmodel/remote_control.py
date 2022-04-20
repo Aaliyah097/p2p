@@ -21,7 +21,7 @@ import pyautogui
 
 
 class MainControl(QtWidgets.QMainWindow):
-	def __init__(self, handler: DataHandler):
+	def __init__(self, handler):
 		super(MainControl, self).__init__()
 		self.ui = MainWindow()
 		self.ui.setupUi(self)

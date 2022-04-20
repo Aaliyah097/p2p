@@ -29,6 +29,7 @@ class DataHandler(QtCore.QThread):
         self.socket.sendto('Hello'.encode('utf-8'), (self.partner_ip, self.partner_port))
 
     def send_json(self, data):
+        print('Отправка {}:{}'.format(self.partner_ip, self.partner_port))
         try: json_data = json.dumps(data.decode('utf-8'))
         except: json_data = json.dumps(data)
 

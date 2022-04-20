@@ -26,6 +26,7 @@ class DataHandler(QtCore.QThread):
         self.hot_keys = ['space', 'enter', 'tab']
 
     def make_handshake(self):
+        print('Приветствие с {}:{}'.format(self.partner_ip, self.partner_port))
         self.socket.sendto('Hello'.encode('utf-8'), (self.partner_ip, self.partner_port))
 
     def send_json(self, data):
@@ -55,7 +56,7 @@ class DataHandler(QtCore.QThread):
             full_load = False
             while not full_load:
                 data, addr = self.socket.recvfrom(self.max_bytes)
-                print('Получено от {}:{}'.format(addr[0], addr[1]))
+                #print('Получено от {}:{}'.format(addr[0], addr[1]))
                 if (b'begin>>' in data) and (b'<<end' in data):
                     data = data.replace(b'begin>>', b'')
                     data = data.replace(b'<<end', b'')

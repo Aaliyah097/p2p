@@ -189,7 +189,7 @@ class MainControl(QtWidgets.QMainWindow):
 				if req.status == 'awaiting':
 					status = 'Ожидает разрешения'
 					btn = QtWidgets.QPushButton(table)
-					btn.setText('Удалить')
+					btn.setText('Разрешить')
 					btn.setStyleSheet(
 						'QPushButton {border-radius: 25px;''background-color: rgb(85, 0, 127);font: 10pt "Calibri";'
 						'color: rgb(255, 255, 255); max-width: 160px; max-height: 100px;}'
@@ -254,6 +254,7 @@ class MainControl(QtWidgets.QMainWindow):
 					#thread = Thread(target=self.listen, args=(
 					# partner_connection.host_ip, partner_connection.host_port, self.user.id, partner_connection.id,))
 					# self.threads.append(thread)
+					print('Ожидаем ответ от {}:{}'.format(partner_connection.host_ip, partner_connection.host_port))
 					thread = WorkThread(self.user.id, partner_connection.id, partner_connection.host_port, partner_connection.host_ip, parent=self)
 					thread.threadSignal.connect(self.listen)
 					thread.start()
@@ -273,6 +274,8 @@ class MainControl(QtWidgets.QMainWindow):
 		self.handler = DataHandlerController(self.udp_socket)
 		self.handler.is_active = True
 		self.handler.partner_port = data[0]
+
+		print(self.handler.__dict__)
 
 		self.window = urls.path('remote/', handler=self.handler)
 		self.window.show()

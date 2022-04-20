@@ -103,12 +103,14 @@ class MainControl(QtWidgets.QMainWindow):
 			self.connection.host_port = int(response[2])
 
 			if self.connection.is_local:
-				s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-				s.connect(('8.8.8.8', 80))
-				local_ip = s.getsockname()[0]
+				self.udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+				self.udp_socket.connect(('8.8.8.8', 80))
+				local_ip = self.udp_socket.getsockname()[0]
+				local_port = self.udp_socket.getsockname()[1]
 				self.connection.host_ip = local_ip
+				self.connection.host_port = local_port
 
-				query = Connection.update(host_ip=local_ip).where(Connection.id == self.connection.id)
+				query = Connection.update(host_ip=local_ip, host_port=local_port).where(Connection.id == self.connection.id)
 				query.execute()
 		except Exception as e:
 			print(str(e))
